@@ -96,6 +96,14 @@
                         value="5f63f483-cc87-4ed5-995f-f0e4659b6719"
                     >
 
+                    <!-- Redirecionamento após envio -->
+                    <input
+                        type="hidden"
+                        name="redirectTo"
+                        id="redirectTo"
+                        value=""
+                    >
+
                     <!-- Nome e e-mail -->
                     <div class="form-row">
 
@@ -184,7 +192,9 @@
 
             <div class="container footer-content">
 
+                <!-- Identidade visual -->
                 <div>
+
                     <img
                         src="assets/img/logo.png"
                         alt="Café & Afeto"
@@ -192,30 +202,57 @@
                     >
 
                     <p>Seu cantinho de pausa e sabor.</p>
+
                 </div>
 
+                <!-- Links de navegação -->
                 <div>
+
                     <strong>Explore</strong>
+
                     <a href="index.html">Início</a>
                     <a href="sobre.html">Sobre nós</a>
                     <a href="produtos.html">Cardápio</a>
+
                 </div>
 
+                <!-- Informações de contato -->
                 <div>
+
                     <strong>Contato</strong>
+
                     <a href="mailto:contato@cafeafeto.com.br">
                         contato@cafeafeto.com.br
                     </a>
+
                     <span>Instagram: @cafeafeto</span>
+
                 </div>
 
             </div>
 
+            <!-- Direitos autorais -->
             <div class="footer-bottom">
+
                 © 2026 Café & Afeto. Todos os direitos reservados.
+
             </div>
 
         </footer>
+
+        <!-- Configuração do redirecionamento -->
+        <script>
+
+            // Identifica o campo de redirecionamento
+            const redirectField = document.getElementById("redirectTo");
+
+            // Define o endereço da página inicial
+            redirectField.value = new URL(
+                "index.html",
+                window.location.href
+            ).href;
+
+        </script>
 
     </body>
 
