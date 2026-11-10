@@ -1,0 +1,553 @@
+/* 1. Variáveis de cores */
+:root {
+    --coffee: #50352b;
+    --coffee-dark: #34231e;
+    --caramel: #b77b4b;
+    --cream: #fbf7f1;
+    --cream-2: #f3ebe1;
+    --ink: #342d29;
+    --muted: #756b64;
+    --white: #ffffff;
+    --shadow: 0 12px 32px rgba(58, 39, 29, .09);
+}
+
+/* 2. Configurações gerais */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--white);
+    font-family: Aptos, "Segoe UI", Arial, sans-serif;
+    line-height: 1.65;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+/* 3. Cabeçalho e navegação */
+.site-header {
+    background: rgba(255, 255, 255, .97);
+    border-bottom: 1px solid #eee7df;
+    position: relative;
+    z-index: 2;
+}
+
+.navbar {
+    min-height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.logo {
+    width: 190px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--coffee);
+    font-weight: 650;
+    font-size: .98rem;
+    padding: 10px 0;
+    border-bottom: 2px solid transparent;
+    transition: .2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--caramel);
+    border-color: var(--caramel);
+}
+
+/* 4. Banner principal */
+.hero {
+    min-height: 490px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(42, 27, 21, .88),
+            rgba(42, 27, 21, .48)
+        ),
+        url("../assets/img/cappuccino.jpg") center/cover no-repeat;
+    color: white;
+}
+
+.hero-content {
+    padding-top: 76px;
+    padding-bottom: 76px;
+    max-width: 1120px;
+}
+
+.hero h1 {
+    max-width: 690px;
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    line-height: 1.08;
+    margin: 14px 0 20px;
+    letter-spacing: -.04em;
+}
+
+.hero p {
+    max-width: 630px;
+    color: #f6eee7;
+    font-size: 1.12rem;
+    margin: 0 0 30px;
+}
+
+/* 5. Textos de destaque */
+.eyebrow {
+    color: var(--caramel);
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+}
+
+.hero .eyebrow {
+    color: #e9bd91;
+}
+
+/* 6. Botões */
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 5px;
+    padding: 13px 23px;
+    background: var(--caramel);
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.button:hover {
+    background: var(--coffee);
+    transform: translateY(-1px);
+}
+
+.button-outline {
+    color: var(--coffee);
+    border: 1px solid var(--caramel);
+    background: transparent;
+}
+
+.button-outline:hover {
+    color: white;
+}
+
+/* 7. Seções gerais */
+.section {
+    padding-top: 78px;
+    padding-bottom: 78px;
+}
+
+.intro-grid,
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 64px;
+}
+
+h2 {
+    color: var(--coffee);
+    font-size: clamp(1.9rem, 3vw, 2.7rem);
+    line-height: 1.15;
+    letter-spacing: -.025em;
+    margin: 12px 0 18px;
+}
+
+p {
+    margin-top: 0;
+}
+
+.intro-grid p,
+.story-grid p {
+    color: var(--muted);
+}
+
+.feature-image {
+    width: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--caramel);
+    font-weight: 750;
+}
+
+.text-link:hover {
+    color: var(--coffee);
+}
+
+.section-soft {
+    background: var(--cream);
+}
+
+/* 8. Títulos das seções */
+.section-heading {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 38px;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+/* 9. Produtos e cards */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.product-grid-four {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #eee6dd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 22px rgba(58, 39, 29, .05);
+    transition: .2s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.product-card > img {
+    width: 100%;
+    aspect-ratio: 1.2 / 1;
+    object-fit: cover;
+    background: var(--cream-2);
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h2,
+.product-info h3 {
+    font-size: 1.22rem;
+    color: var(--coffee);
+    margin: 0 0 8px;
+}
+
+.product-info p {
+    color: var(--muted);
+    font-size: .94rem;
+    min-height: 48px;
+    margin-bottom: 12px;
+}
+
+.product-info strong {
+    color: var(--caramel);
+    font-size: 1.1rem;
+}
+
+.center {
+    text-align: center;
+    margin-top: 38px;
+}
+
+/* 10. Banner das páginas internas */
+.page-banner {
+    padding: 68px 0;
+    background: var(--cream);
+    text-align: center;
+}
+
+.page-banner h1 {
+    color: var(--coffee);
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    margin: 8px 0;
+    letter-spacing: -.04em;
+}
+
+.page-banner p {
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+/* 11. Valores e diferenciais */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.value-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 22px rgba(58, 39, 29, .05);
+}
+
+.value-icon {
+    color: var(--caramel);
+    font-size: 2rem;
+}
+
+.value-card h3 {
+    color: var(--coffee);
+    margin: 10px 0 5px;
+}
+
+.value-card p {
+    color: var(--muted);
+    margin: 0;
+}
+
+.menu-note {
+    margin-top: 26px;
+    color: var(--muted);
+    font-size: .88rem;
+}
+
+/* 12. Contato */
+.contact-layout {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.contact-copy p {
+    color: var(--muted);
+}
+
+.contact-detail {
+    border-top: 1px solid #eee6dd;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.contact-detail strong {
+    color: var(--coffee);
+}
+
+.contact-detail span {
+    color: var(--muted);
+}
+
+/* 13. Formulário */
+.contact-form {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    color: var(--coffee);
+    font-weight: 700;
+    font-size: .93rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #d9cec3;
+    border-radius: 5px;
+    background: white;
+    padding: 12px 13px;
+    color: var(--ink);
+    font: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid #d6a77d;
+    border-color: var(--caramel);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-note {
+    color: var(--muted);
+    font-size: .8rem;
+    margin: 14px 0 0;
+}
+
+/* 14. Rodapé */
+.site-footer {
+    background: var(--coffee-dark);
+    color: #f6eee7;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    padding-top: 44px;
+    padding-bottom: 38px;
+}
+
+.footer-logo {
+    width: 170px;
+    filter: brightness(0) invert(1);
+    margin-bottom: 12px;
+}
+
+.footer-content p,
+.footer-content span {
+    color: #d3c3b8;
+    font-size: .92rem;
+}
+
+.footer-content > div:not(:first-child) {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-content strong {
+    color: #e9bd91;
+    margin-bottom: 5px;
+}
+
+.footer-content a:hover {
+    color: #e9bd91;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    text-align: center;
+    padding: 15px 20px;
+    color: #cbbab0;
+    font-size: .83rem;
+}
+
+/* 15. Responsividade - Tablets */
+@media (max-width: 850px) {
+    .product-grid-four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .intro-grid,
+    .story-grid,
+    .contact-layout {
+        gap: 34px;
+    }
+}
+
+/* 16. Responsividade - Celulares */
+@media (max-width: 640px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        padding: 16px 0;
+        gap: 12px;
+    }
+
+    .logo {
+        width: 160px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 22px;
+    }
+
+    .hero {
+        min-height: 430px;
+    }
+
+    .hero-content {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .intro-grid,
+    .story-grid,
+    .contact-layout,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .product-grid,
+    .product-grid-four,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-form {
+        padding: 22px;
+    }
+
+    .footer-content {
+        gap: 24px;
+    }
+}
